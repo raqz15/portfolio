@@ -1,0 +1,394 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+    background: linear-gradient(to right, #58261a, #4c2712);
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #e6e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav .logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav .menu li {
+    margin: 0;
+}
+
+nav .menu li a {
+    color: #f0efef;
+    background: rgba(235, 229, 229, 0.066); /* Transparent background */
+    backdrop-filter: blur(200px); /* Apply blur effect */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.6s;
+}
+
+nav .menu li a:hover {
+    color: #ee4218;
+}
+
+/* Hamburger Menu */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav .menu {
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(20px); /* Apply blur effect */
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav .menu li {
+        margin: 1rem 0;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        transform: translateX(0);
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2, h3 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+a {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #feb47b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+a:hover {
+    color: #ff7e5f;
+    transform: scale(1.05);
+}
+
+.skills-container, .projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.skill, .project {
+    padding: 2rem;
+    border: 2px solid #0e0e0e;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill:hover, .project:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #feb47b;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1rem;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: #ddd;
+}
+
+form button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+form button:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+    transform: scale(1.05);
+}
+
+.social-media a {
+    margin-right: 1.5rem;
+    color: #feb47b;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-media a:hover {
+    color: #ff7e5f;
+    transform: scale(1.1);
+}
+
+/* About Section with Back Link */
+.about-section {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #fa3909;
+    text-decoration: none;
+    border: 2px solid #fa3909;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.back-link:hover {
+    background: #fa3909;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: linear-gradient(to right, #232526, #414345);
+    color: #e0e0e0;
+}
+
+body.dark-mode nav {
+    background: rgba(31, 31, 31, 0.5);
+}
+
+body.dark-mode .skill, body.dark-mode .project {
+    background: rgba(60, 60, 60, 0.5);
+    border-color: #757575;
+}
+
+body.dark-mode form input, body.dark-mode form textarea {
+    background: rgba(31, 31, 31, 0.5);
+    color: #e0e0e0;
+    border-color: #757575;
+}
+
+body.dark-mode a {
+    color: #b3b3b3;
+}
+
+body.dark-mode form button {
+    background: linear-gradient(to right, #232526, #414345);
+}
+
+body.dark-mode form button:hover {
+    background: linear-gradient(to right, #414345, #232526);
+}
+
+body.dark-mode .social-media a {
+    color: #b3b3b3;
+}
+
+/* Dark Mode Toggle Button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+/* Keyframes for scroll-triggered animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Default styles for animated elements */
+.animated {
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+}
+
+/* Add different colors for the animations */
+.fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+    color: #ff7e5f; /* Example color */
+}
+
+.fadeInLeft {
+    animation: fadeInLeft 1s ease-out forwards;
+    color: #feb47b; /* Example color */
+}
+
+.fadeInRight {
+    animation: fadeInRight 1s ease-out forwards;
+    color: #e0e0e0; /* Example color */
+}
